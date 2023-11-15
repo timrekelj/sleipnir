@@ -1,7 +1,7 @@
 package main
 
-import sl "../core"
-import sl_input "../input"
+import sl "sleipnir:core"
+import sl_input "sleipnir:input"
 import "core:fmt"
 
 main :: proc() {

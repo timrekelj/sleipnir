@@ -20,7 +20,7 @@ Use `examples/` for testing new features and examples of usage.
             "request": "launch",
             "preLaunchTask": "Build",
             "name": "Debug",
-            "program": "${workspaceFolder}/example/build/build.out",
+            "program": "${workspaceFolder}/examples/build/build.out",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
@@ -41,12 +41,12 @@ Use `examples/` for testing new features and examples of usage.
         {
             "label": "mkdir",
             "type": "shell",
-            "command": "mkdir -p example/build",
+            "command": "mkdir -p examples/build",
         },
         {
             "label": "build",
             "type": "shell",
-            "command": "odin build examples/${input:example} -file -debug -out:example/build/build.out",
+            "command": "odin build examples/${input:example} -file -debug -out:examples/build/build.out -collection:sleipnir=src/",
             "group": "build"
         },
         {
@@ -74,7 +74,10 @@ Use `examples/` for testing new features and examples of usage.
 ```json
 {
     "$schema": "https://raw.githubusercontent.com/DanielGavin/ols/master/misc/ols.schema.json",
-    "collections": [{ "name": "core", "path": "<path_to_odin>/core" }],
+    "collections": [
+        { "name": "core", "path": "~/Documents/gamedev/Odin/core" },
+        { "name": "sleipnir", "path": "./src"}
+    ],
     "enable_document_symbols": true,
     "enable_semantic_tokens": false,
     "enable_hover": true,
